@@ -1,5 +1,6 @@
 package br.com.dwb.driver.driver.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -27,12 +28,14 @@ public class Driver implements Serializable {
     @Column(name = "city",nullable = false)
     private String city;
 
+    @JsonFormat(pattern = "yyyy-MM-dd",shape = JsonFormat.Shape.STRING)
     @Column(name = "rentDate")
-    private Date rentDate;
+    private String rentDate;
 
     @Column(name = "rentalTime")
     private Date rentalTime;
 
-    @Column(name = "car",nullable = false)
-    private String car;
+    @ManyToOne
+    @JoinColumn(name = "cars_id")
+    private Cars cars;
 }
