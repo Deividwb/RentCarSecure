@@ -11,10 +11,10 @@ import org.springframework.web.server.ResponseStatusException;
 import java.util.List;
 
 @RestController
-@RequestMapping("/driver")
+@RequestMapping("/drivers")
 public class DriverController {
 
-   @Autowired//(Conectar Automatico)
+    @Autowired//(Conectar Automatico,gera construtor)
     private DriverService driverService;
 
    @Autowired
@@ -59,4 +59,9 @@ public class DriverController {
                   return Void.TYPE;
               }).orElseThrow(()->new ResponseStatusException(HttpStatus.NOT_FOUND,"Driver not found"));
    }
+//
+//   @RequestMapping("/index")
+//   public String index(){
+//       return "index";
+//   }
 }

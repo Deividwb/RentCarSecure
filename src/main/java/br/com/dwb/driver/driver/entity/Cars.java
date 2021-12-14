@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -24,11 +25,12 @@ public class Cars implements Serializable {
     @Column(name = "trafficTicket")
     private String trafficTicket;
 
-
-
-    @OneToMany//(mappedBy = "cars",cascade = CascadeType.ALL,orphanRemoval = true)
-    @JoinColumn(name = "cars_id")
-    private List<Driver> driver;
+    @OneToMany(mappedBy = "cars",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true,
+            fetch = FetchType.LAZY)
+    //@JoinColumn(name = "driver_id")
+    private List<Driver> driver = new ArrayList<>();
 
 
 

@@ -16,7 +16,7 @@ import java.util.Date;
 public class Driver implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "name",nullable = false)
@@ -35,7 +35,7 @@ public class Driver implements Serializable {
     @Column(name = "rentalTime")
     private Date rentalTime;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)//Eager_Carrega os carros toda vez que abrir tabela Drivers//Lazy_Nao carrego Cars, somente se der um get
     @JoinColumn(name = "cars_id")
     private Cars cars;
 }
