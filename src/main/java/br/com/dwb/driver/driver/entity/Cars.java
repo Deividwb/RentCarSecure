@@ -1,5 +1,7 @@
 package br.com.dwb.driver.driver.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonRawValue;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -22,13 +24,14 @@ public class Cars implements Serializable {
     @Column(name = "model",nullable = false)
     private String model;
 
-    @Column(name = "trafficTicket")
-    private String trafficTicket;
+//    @Column(name = "trafficTicket")
+//    private String trafficTicket;
+
+
 
     @OneToMany(mappedBy = "cars",
             cascade = CascadeType.ALL,
-            orphanRemoval = true,
-            fetch = FetchType.LAZY)
+            orphanRemoval = true)
     //@JoinColumn(name = "driver_id")
     private List<Driver> driver = new ArrayList<>();
 

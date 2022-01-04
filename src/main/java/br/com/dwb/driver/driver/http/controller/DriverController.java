@@ -5,6 +5,7 @@ import br.com.dwb.driver.driver.service.DriverService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
@@ -59,9 +60,9 @@ public class DriverController {
                   return Void.TYPE;
               }).orElseThrow(()->new ResponseStatusException(HttpStatus.NOT_FOUND,"Driver not found"));
    }
-//
-//   @RequestMapping("/index")
-//   public String index(){
-//       return "index";
-//   }
+
+   @RequestMapping("/home")
+   public String home(){
+       return "index";
+   }
 }
