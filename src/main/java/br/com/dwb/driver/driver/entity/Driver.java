@@ -30,12 +30,12 @@ public class Driver implements Serializable {
     @Column(name = "city",nullable = false)
     private String city;
 
-//    @JsonFormat(pattern = "yyyy-MM-dd",shape = JsonFormat.Shape.STRING)
-//    @Column(name = "rentDate")
-//    private String rentDate;
-//
-//    @Column(name = "rentalTime")
-//    private Date rentalTime;
+    @JsonFormat(pattern = "yyyy-MM-dd",shape = JsonFormat.Shape.STRING)
+    @Column(name = "rentDate")
+    private String rentDate;
+
+    @Column(name = "rentalTime")
+    private Date rentalTime;
 
     @JsonIgnore//aqui funcionou
     @ManyToOne(fetch = FetchType.EAGER)//Eager_Carrega os carros toda vez que abrir tabela Drivers//Lazy_Nao carrego Cars, somente se der um get
