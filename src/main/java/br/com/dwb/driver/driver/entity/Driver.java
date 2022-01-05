@@ -8,7 +8,9 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -41,4 +43,9 @@ public class Driver implements Serializable {
     @ManyToOne(fetch = FetchType.EAGER)//Eager_Carrega os carros toda vez que abrir tabela Drivers//Lazy_Nao carrego Cars, somente se der um get
     @JoinColumn(name = "cars_id")
     private Cars cars;
-}
+
+    public String toString(){
+        return name;
+    }
+    }
+

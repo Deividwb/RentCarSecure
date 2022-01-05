@@ -1,5 +1,6 @@
 package br.com.dwb.driver.driver.service;
 
+import br.com.dwb.driver.driver.dtos.DriverDto;
 import br.com.dwb.driver.driver.entity.Driver;
 import br.com.dwb.driver.driver.repository.DriverRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,5 +29,8 @@ public class DriverService {
 
     public void deleteById(Long id) {
         driverRepository.deleteById(id);
+    }
+    public List<DriverDto> findByDriverDto(){
+        return driverRepository.findByDriverDto();
     }
 }
