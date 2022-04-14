@@ -1,0 +1,11 @@
+React:{
+npx create-react-app driver_front --> cria projeto
+yarn add react-router-dom -->gerenciamento de rotas
+yarn add react-toastify --> toast alertas
+yarn add axios bootstrap
+}
+
+sites{
+google fonts
+boxicons
+}
