@@ -1,10 +1,12 @@
 :root {
   /* ======Colors======= */
+  --body-color: #e4e9f7;
+  --sidebar-color: #fff;
+  --primary-color: #695cfe;
   --background-color: #444;
-  --sidebar-color: #e4e9f7;
-  --primary-color: #fff;
-  --primary-color-light: #695cfe;
-  --toglr-color: #ddd;
+  --primary-color-light: #f6f5ff;  
+  /* --sidebar-color: #1f273e;    */
+  --toggle-color: #ddd;
   --text-color: #707070;
 
   /* =====Transition====== */
@@ -18,5 +20,5 @@
   font-family: "Poppins", sans-serif;
   box-sizing: border-box;
   padding: 0;
-  margin: 0;
+  margin: 0; 
 }

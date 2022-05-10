@@ -1,13 +1,86 @@
+
+
+/* ====Resuable==== */
+.sidebar .text {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+/* ====Sidebar===== */
 .sidebar {
   position: fixed;
   top: 0;
   left: 0;
   height: 100%;
   width: 250px;
+  padding: 10px 14px;
   background: var(--sidebar-color);
+}
+
+.sidebar li {
+  height: 50px;
+  /* background: red; */
+  margin-top: 10px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar li .icon {
+  font-size: 20px;  
+}
+
+.sidebar li .icon,
+.sidebar li .text {
+  color: var(--text-color);  
+}
+
+
+
+.sidebar header {
+  position: relative
 }
 
 .sidebar .image-text img {
   width: 40px;
   border-radius: 6px;
 }
+
+.sidebar header .image-text {
+  display: flex;
+  align-items: center;
+}
+
+header .image-text .header-text{
+  display: flex;
+  flex-direction: column;
+  margin-left: 15px;
+}
+
+.header-text .name {
+  font-weight: 600;
+}
+
+.header-text .profession {
+  margin-top: -2px;  
+}
+
+.sidebar header .toggle {
+  position: absolute;
+  top: 70px;
+  right: -25px;
+  transform: translateY(-50px);
+  height: 25px;
+  width: 25px;
+  background: var(--primary-color);
+  font-display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  color: var(--sidebar-color);
+  font-size: 15px; 
+  padding-left: 2px; 
+}
+
+
