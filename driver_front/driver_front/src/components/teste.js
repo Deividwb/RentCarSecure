@@ -1,4 +1,4 @@
-const teste = () => {
-  return <h1>Dentro teste</h1>;
+const Teste = () => {
+  return <h1>Dentro testefdfhdghbdgnfxgnzgfnzdghdzgnfgnffgnfgnzhdzhrhjrjhrs\hrshrtsh</h1>;
 };
-export default teste;
+export default Teste;

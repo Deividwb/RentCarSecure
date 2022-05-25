@@ -7,7 +7,9 @@ const Router = () => {
   return (
     <>
       <ToastContainer />
+
       <BrowserRouter>
+      <Menu/>      
         <Routes>
           <Route path="/" element={<Menu />} />
           <Route path="/register_driver" element={<RegisterDriver />} />

@@ -16,11 +16,13 @@ const Menu = () => {
   const [isDark, setIsDark] = useState(false);
 
   const handleSidebar = () => {
-    if (active === false) {
-      setActive(true);
-    } else {
-      setActive(false);
-    }
+
+    setActive(!active)
+    // if (active === false) {
+    //   setActive(true);
+    // } else {
+    //   setActive(false);
+    // }
   };
 
   const handleDark = () => {
@@ -52,25 +54,26 @@ const Menu = () => {
 
             <div className="menu-bar">
               <div className="menu">
+                {/* <ul className="menu-links"> */}
                 <li className="search-box">
                   <SearchIcon className="bx bx-search icon" />
                   <input type="search" placeholder="Procurar..."></input>
                 </li>
 
-                {/* <ul className="menu-links"> */}
-                <li className="nav-link">
+                
+                <li>
                   <NavLink to={"/register_driver"}>
                     <SupervisedUserCircleTwoToneIcon className="bx bx-home-alt icon" />
                     <span className="text nav-text">Motoristas</span>
                   </NavLink>
                 </li>
-                <li className="nav-link">
+                <li >
                   <NavLink to={"/register_driver"}>
                     <DriveEtaTwoToneIcon className="bx bx-home-alt icon" />
                     <span className="text nav-text">Carros</span>
                   </NavLink>
                 </li>
-                <li className="nav-link">
+                <li>
                   <NavLink to={"/register_driver"}>
                     <HomeIcon className="bx bx-home-alt icon" />
                     <span className="text nav-text">Manutenção</span>
