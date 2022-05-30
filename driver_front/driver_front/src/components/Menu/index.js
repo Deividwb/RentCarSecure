@@ -10,15 +10,22 @@ import DarkModeTwoToneIcon from "@mui/icons-material/DarkModeTwoTone";
 import WbSunnyTwoToneIcon from "@mui/icons-material/WbSunnyTwoTone";
 import DriveEtaTwoToneIcon from "@mui/icons-material/DriveEtaTwoTone";
 import SupervisedUserCircleTwoToneIcon from "@mui/icons-material/SupervisedUserCircleTwoTone";
+import { useDispatch, useSelector } from "react-redux";
+// import { ISACTIVE, NOTACTIVE } from "../../components/Active";
 
 const Menu = () => {
   const [active, setActive] = useState(false);
   const [isDark, setIsDark] = useState(false);
+  const [language, setLanguage] = useState(false);
+
+  const isActive = useSelector((state) => state);
+  const dispatch = useDispatch();
 
   const handleSidebar = () => {
 
-    setActive(!active)
-    // if (active === false) {
+
+    // setActive(!active);
+    // if (isDark === false) {
     //   setActive(true);
     // } else {
     //   setActive(false);
@@ -33,10 +40,14 @@ const Menu = () => {
     }
   };
 
+  const handleLanguage = () => {
+    setLanguage(!language);
+  };
+
   return (
     <>
       <div className={isDark ? "body dark" : "body"}>
-        <nav className={active ? "sidebar close" : "sidebar"}>
+        <nav className={isActive ? "sidebar close" : "sidebar"}>
           <header>
             <div className="image-text">
               <span className="image">
@@ -60,23 +71,28 @@ const Menu = () => {
                   <input type="search" placeholder="Procurar..."></input>
                 </li>
 
-                
                 <li>
                   <NavLink to={"/register_driver"}>
                     <SupervisedUserCircleTwoToneIcon className="bx bx-home-alt icon" />
-                    <span className="text nav-text">Motoristas</span>
+                    <span className="text nav-text">
+                      {language ? "Motoristas" : "Driver"}
+                    </span>
                   </NavLink>
                 </li>
-                <li >
-                  <NavLink to={"/register_driver"}>
+                <li>
+                  <NavLink to={"/teste"}>
                     <DriveEtaTwoToneIcon className="bx bx-home-alt icon" />
-                    <span className="text nav-text">Carros</span>
+                    <span className="text nav-text">
+                      {language ? "Carros" : "Cars"}
+                    </span>
                   </NavLink>
                 </li>
                 <li>
                   <NavLink to={"/register_driver"}>
                     <HomeIcon className="bx bx-home-alt icon" />
-                    <span className="text nav-text">Manutenção</span>
+                    <span className="text nav-text">
+                      {language ? "Manutenção" : "Suppport"}
+                    </span>
                   </NavLink>
                 </li>
                 {/* </ul> */}
@@ -85,16 +101,18 @@ const Menu = () => {
               <li className="bottom-content">
                 <NavLink to={"/register_driver"}>
                   <ExitToAppTwoToneIcon className="bx bx-log-out icon exit" />
-                  <span className="text nav-text">Sair</span>
+                  <span className="text nav-text">
+                    {language ? "Sair" : "Exit"}
+                  </span>
                 </NavLink>
               </li>
 
               <li className="mode">
                 <div className="moon-sun">
                   {isDark ? (
-                     <>
-                    <DarkModeTwoToneIcon className="bx bx-moon icon moon" />
-                    <span className="mode-text text">Modo Escuro</span>
+                    <>
+                      <DarkModeTwoToneIcon className="bx bx-moon icon moon" />
+                      <span className="mode-text text">Modo Escuro</span>
                     </>
                   ) : (
                     <>
@@ -103,7 +121,6 @@ const Menu = () => {
                     </>
                   )}
                 </div>
-                
 
                 <div
                   className={
@@ -111,6 +128,30 @@ const Menu = () => {
                   }
                 >
                   <span className="switch" onClick={handleDark}></span>
+                </div>
+              </li>
+
+              <li className="mode">
+                <div className="moon-sun">
+                  {language ? (
+                    <>
+                      <span className="mode-text text">Mude o idoma</span>
+                    </>
+                  ) : (
+                    <>
+                      <span className="mode-text text">Change Language</span>
+                    </>
+                  )}
+                </div>
+
+                <div
+                  className={language ? "toggle-switchs  " : "toggle-switchs"}
+                >
+                  {/* <span className="switchs" onClick={handleLanguage}></span> */}
+                  <span
+                    className={language ? "switchs-change" : "switchs"}
+                    onClick={handleLanguage}
+                  ></span>
                 </div>
               </li>
             </div>

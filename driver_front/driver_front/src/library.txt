@@ -1,0 +1,5 @@
+Bibliotecas usadas no sistema
+#material-ui
+#yarn add redux
+#yarn add react-redux
+#redux-tool-kit

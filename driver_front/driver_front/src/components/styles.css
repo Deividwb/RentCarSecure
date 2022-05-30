@@ -35,6 +35,7 @@
   padding: 10px 14px;
   background: var(--sidebar-color);
   transition: var(--tran-05);
+  z-index: 100;
 }
 
 .sidebar.close {
@@ -181,14 +182,14 @@ align-items: center;
 }
 
 
-/* .menu-bar .mode i {
+.menu-bar .mode i {
   position: absolute;
   transition: var(--tran-03);
-} */
+}
 
-/* .menu-bar .mode i .sun {
+.menu-bar .mode i .sun {
   opacity: 0;
-} */
+}
 
 /* .body.dark .menu-bar .mode i .sun {
   opacity: 1;
@@ -237,8 +238,111 @@ align-items: center;
   left: 24px;  
 }
 
+/* ////////////>//////////// */
+
+.menu-bar .mode .toggle-switchs {
+  position: absolute;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-width: 60px;  
+  cursor: pointer;
+  border-radius: 6px;
+  background: var(--primary-color-light);
+}
+
+.switchs::before {
+  content: '';
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  background: var(--sidebar-color);
+  transition: var(--tran-03);
+}
+
+.toggle-switchs .switchs {
+  position: relative;
+  height: 22px;
+  width: 44px;
+  border-radius: 25px;
+  background: var(--toggle-color);
+}
+
+
+.switchs::before {
+  content: '';
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  background: var(--sidebar-color);
+  transition: var(--tran-03);
+}
+
+.switchs-change::before{
+  content: '';
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  top: 50%;
+  left: 24px;
+  transform: translateY(-50%);
+  background: var(--toggle-color);
+  transition: var(--tran-03);  
+}
+
+/* ////////////<////////// */
+
+
 .exit { 
     transform: rotate(180deg);
+}
+
+/* =====my pages====== */
+
+.home {
+  position: relative;
+  height: 100vh;
+  left: 250px;
+  width: calc(100% - 250px);
+  background: red;
+  transition: var(--tran-05);
+}
+
+.homeTwo{
+  position: relative;
+  height: 100vh;
+  left: 88px;
+  width: calc(100% - 88px);
+  background: blue;
+  transition: var(--tran-05);
+
+  /* left: 88px;
+  width: calc(100% - 88px);
+  background: blue; */
+}
+
+/* #open-button {
+  display:none;
+} */
+
+.homes{
+  position: relative;
+  height: 100vh;
+  left: 250px;
+  width: calc(100% - 250px);
+  background:green;
+  /* transition: var(--tran-05); */
 }
 
 
