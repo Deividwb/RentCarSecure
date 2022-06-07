@@ -1,0 +1,28 @@
+{
+  "cars": [
+    {
+      "id": 1,
+      "year": 2019,
+      "model": "kwid",
+      "color": "branco"
+    },
+    {
+      "id": 2,
+      "year": 2020,
+      "model": "Mobi",
+      "color": "vermelho"
+    }
+  ],
+  "drivers": [
+    {
+      "id": 1,
+      "name": "Davi",
+      "age": 10
+    },
+    {
+      "id": 2,
+      "name": "Deivid",
+      "age": 38
+    }
+  ]
+}

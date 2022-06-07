@@ -3,3 +3,9 @@ Bibliotecas usadas no sistema
 #yarn add redux
 #yarn add react-redux
 #redux-tool-kit
+#yarn add json-server
+#yarn server(startar backend com nome server)
+#npx json-server --watch server.json --port 8080
+#yarn add axios
+#Tabela Densa(Nome da table do material)
+#yarn add @react-pdf/renderer

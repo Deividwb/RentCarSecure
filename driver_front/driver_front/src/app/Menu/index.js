@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import "../styles.css";
+// import "../styles.css";
+import "../Menu/styles.css";
 import LogoImg from "../../assets/images/logo.png";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import { NavLink } from "react-router-dom";
@@ -19,12 +20,12 @@ const Menu = () => {
   const [language, setLanguage] = useState(false);
 
   const isActive = useSelector((state) => state);
+
   const dispatch = useDispatch();
 
   const handleSidebar = () => {
+    setActive(!active);
 
-
-    // setActive(!active);
     // if (isDark === false) {
     //   setActive(true);
     // } else {
@@ -47,7 +48,7 @@ const Menu = () => {
   return (
     <>
       <div className={isDark ? "body dark" : "body"}>
-        <nav className={isActive ? "sidebar close" : "sidebar"}>
+        <nav className={active ? "sidebar close" : "sidebar"}>
           <header>
             <div className="image-text">
               <span className="image">
@@ -72,7 +73,7 @@ const Menu = () => {
                 </li>
 
                 <li>
-                  <NavLink to={"/register_driver"}>
+                  <NavLink to={"/driver-table"}>
                     <SupervisedUserCircleTwoToneIcon className="bx bx-home-alt icon" />
                     <span className="text nav-text">
                       {language ? "Motoristas" : "Driver"}

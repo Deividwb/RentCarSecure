@@ -1,0 +1,83 @@
+{
+  "cars": [
+    {
+      "id": 1,
+      "year": 2019,
+      "model": "kwid",
+      "color": "branco"
+    },
+    {
+      "id": 2,
+      "year": 2020,
+      "model": "Mobi",
+      "color": "vermelho"
+    }
+  ],
+  "drivers": [
+    {
+      "id": 1,
+      "name": "Davi",
+      "age": 10,
+      "address": "Rua trinta e um",
+      "sexo": "M",
+      "city": "SBO"
+    },
+    {
+      "id": 2,
+      "name": "Camila",
+      "age": 30,
+      "address": "Rua do sucesso",
+      "sexo": "F",
+      "city": "Americana"
+    },
+    {
+      "id": 3,
+      "name": "Deivid",
+      "age": 40,
+      "address": "Rua trinta e doi",
+      "sexo": "M",
+      "city": "SBO"
+    },
+    {
+      "id": 4,
+      "name": "Willian",
+      "age": 35,
+      "address": "Rua do sucesso antigo",
+      "sexo": "F",
+      "city": "Americana"
+    },
+    {
+      "id": 5,
+      "name": "Rogerio(Banco de Dados)",
+      "age": 35,
+      "address": "Rua do sumisso",
+      "sexo": "F",
+      "city": "Artur Nogueira"
+    },
+    {
+      "id": 6,
+      "name": "Eduardo(BackEnd)",
+      "age": 38,
+      "address": "Rua do estanho",
+      "sexo": "M",
+      "city": "Artur Nogueira"
+    },
+    {
+      "id": 7,
+      "name": "Paulo(EStagiario)",
+      "age": 29,
+      "address": "Rua do Treino",
+      "sexo": "F",
+      "city": "Brasilia"
+    },
+    {
+      "id": 7,
+      "name": "Claudia(Trainee)",
+      "age": 29,
+      "address": "Rua do Treino",
+      "sexo": "F",
+      "city": "Brasilia"
+    }
+
+  ]
+}
