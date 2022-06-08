@@ -30,6 +30,7 @@ import { NavLink } from "react-router-dom";
 import { PDFDownloadLink } from "@react-pdf/renderer";
 import DriversReport from "../Reports/driversReport";
 import LoaderReport from "../Reports/loaderReport";
+import { useSelector } from "react-redux";
 
 function createData(name, calories, fat, carbs, protein) {
   return {
@@ -326,11 +327,13 @@ export default function DriverTable() {
   const emptyRows =
     page > 0 ? Math.max(0, (1 + page) * rowsPerPage - rows.length) : 0;
 
+  const menuActive = useSelector((state) => state.menu.isActive);
+
   return (
-    <div className="home">
+    <div className={menuActive ? "homeTwo" : "home"}>
       <div className="btn">
         {/* <NavLink to={"/loader-report"}> */}
-        <PDFDownloadLink document={<DriversReport />} fileName="driver.pdf">
+        <PDFDownloadLink document={<LoaderReport />} fileName="driver.pdf">
           <Button variant="contained" startIcon={<PictureAsPdfIcon />}>
             Gerar Relatório
           </Button>

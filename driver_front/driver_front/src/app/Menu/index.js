@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 // import "../styles.css";
 import "../Menu/styles.css";
 import LogoImg from "../../assets/images/logo.png";
@@ -12,26 +12,14 @@ import WbSunnyTwoToneIcon from "@mui/icons-material/WbSunnyTwoTone";
 import DriveEtaTwoToneIcon from "@mui/icons-material/DriveEtaTwoTone";
 import SupervisedUserCircleTwoToneIcon from "@mui/icons-material/SupervisedUserCircleTwoTone";
 import { useDispatch, useSelector } from "react-redux";
-// import { ISACTIVE, NOTACTIVE } from "../../components/Active";
+import { isActive, notActive } from "../../store/activeMenuReducer";
 
 const Menu = () => {
-  const [active, setActive] = useState(false);
+  const [active, setActive] = useState();
   const [isDark, setIsDark] = useState(false);
   const [language, setLanguage] = useState(false);
 
-  const isActive = useSelector((state) => state);
-
   const dispatch = useDispatch();
-
-  const handleSidebar = () => {
-    setActive(!active);
-
-    // if (isDark === false) {
-    //   setActive(true);
-    // } else {
-    //   setActive(false);
-    // }
-  };
 
   const handleDark = () => {
     if (isDark === false) {
@@ -44,11 +32,28 @@ const Menu = () => {
   const handleLanguage = () => {
     setLanguage(!language);
   };
+  const menuActive = useSelector((state) => state.menu.isActive);
+
+  const handleSidebar = () => {
+    if (!menuActive) {
+      return dispatch(isActive());
+    }
+    dispatch(notActive());
+
+    // dispatch(isActive());
+    // setTimeout(() => {
+    //   dispatch(notActive());
+    // }, 3000);
+  };
+
+  useEffect(() => {
+    console.log("teste", menuActive);
+  }, []);
 
   return (
     <>
       <div className={isDark ? "body dark" : "body"}>
-        <nav className={active ? "sidebar close" : "sidebar"}>
+        <nav className={menuActive ? "sidebar close" : "sidebar"}>
           <header>
             <div className="image-text">
               <span className="image">

@@ -1,13 +1,21 @@
-import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { isActive, notActive } from "../../store/activeMenuReducer";
 
 const RegisterDriver = () => {
-  const isActive = useSelector((state) => state);
+  // const isActive = useSelector((state) => state);
+  const [active, setActive] = useState(true);
+  const dispatch = useDispatch();
+  const menuActive = useSelector((state) => state.menu.isActive);
+
+  useEffect(() => {
+    setActive(!isActive);
+  }, []);
 
   return (
     <>
-      {/* <div className={isActive ? "home" : "homeTwo"}> */}
-      <div>
+      <div className={menuActive ? "homeTwo" : "home"}>
+        {/* <div> */}
         <nav className="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
           <button
             id="sidebarToggleTop"

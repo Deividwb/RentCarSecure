@@ -1,12 +1,9 @@
-import { legacy_createStore } from 'redux';
+import { combineReducers, legacy_createStore as createStore } from "redux";
 
-import reducer from '../components/Active'
+import activeMenuReducer from "./activeMenuReducer";
 
-// const rootReducer = combineReducers({
-//     active: reducer
-// })
+const rootReducer = combineReducers({
+  menu: activeMenuReducer,
+});
 
-
-
-export default legacy_createStore(reducer)
-
+export default createStore(rootReducer);
