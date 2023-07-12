@@ -259,15 +259,16 @@ export default function DriverTable() {
       city: "",
     },
   ]);
-  console.log("form vazio: ", formDriver);
 
   async function loadDrivers() {
-    const response = await axios.get("http://localhost:8080/drivers");
-
-    setFormDriver(response.data);
-    console.log("teste 1: ", response.data);
+    try {
+      const response = await axios.get("https://localhost:7184/api/Drivers");
+      setFormDriver(response.data);
+    } catch (error) {
+      console.error("Error loading drivers:", error);
+      // Handle the error appropriately (e.g., show an error message to the user)
+    }
   }
-  console.log("teste: ", formDriver);
 
   useEffect(() => {
     loadDrivers();
@@ -329,6 +330,31 @@ export default function DriverTable() {
 
   const menuActive = useSelector((state) => state.menu.isActive);
 
+  async function handlePost() {
+    const data = {
+      name: "John travolta",
+      age: 21,
+      address: "123 Main St",
+      sexo: "Male",
+      city: "New York",
+    };
+    try {
+      const response = await axios.post(
+        "https://localhost:7184/api/Drivers",
+        data
+      );
+      setFormDriver(response.data);
+      console.log("Aqui", response);
+    } catch (error) {
+      console.error("Error loading drivers:", error);
+      // Trate o erro adequadamente (por exemplo, exiba uma mensagem de erro para o usuário)
+    }
+  }
+
+  const handleClickAdd = () => {
+    handlePost();
+  };
+
   return (
     <div className={menuActive ? "homeTwo" : "home"}>
       <div className="btn">
@@ -338,6 +364,13 @@ export default function DriverTable() {
             Gerar Relatório
           </Button>
         </PDFDownloadLink>
+        <Button
+          onClick={handleClickAdd}
+          variant="contained"
+          startIcon={<PictureAsPdfIcon />}
+        >
+          Adicionar
+        </Button>
         {/* </NavLink> */}
       </div>
       <Box sx={{ width: "100%" }}>

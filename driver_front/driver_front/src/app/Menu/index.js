@@ -46,9 +46,9 @@ const Menu = () => {
     // }, 3000);
   };
 
-  useEffect(() => {
-    console.log("teste", menuActive);
-  }, []);
+  // useEffect(() => {
+  //   console.log("DEivid", menuActive);
+  // }, []);
 
   return (
     <>
